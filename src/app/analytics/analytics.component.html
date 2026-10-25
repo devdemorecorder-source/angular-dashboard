@@ -1,0 +1,24 @@
+<div class="analytics-container" *ngIf="metrics$ | async as metrics">
+  <h2>Live System Performance Analytics</h2>
+  <p class="timestamp">Last Updated: {{ metrics.timestamp | date:'mediumTime' }}</p>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <h3>CPU Utilization</h3>
+      <p class="metric-value">{{ metrics.cpuUsage }}%</p>
+      <div class="progress-bar">
+        <div class="fill" [style.width.%]="metrics.cpuUsage"></div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <h3>Memory Allocation</h3>
+      <p class="metric-value">{{ metrics.memoryUsage }} MB</p>
+    </div>
+
+    <div class="metric-card">
+      <h3>Active Connections</h3>
+      <p class="metric-value">{{ metrics.activeRequests }} req/s</p>
+    </div>
+  </div>
+</div>

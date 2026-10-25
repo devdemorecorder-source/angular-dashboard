@@ -1,0 +1,12 @@
+<header class="app-header">
+  <div class="header-container">
+    <h1>Enterprise Cloud Dashboard</h1>
+    <span class="badge" [class.prod]="isProd">
+      {{ isProd ? 'Production' : 'Development' }} (v{{ version }})
+    </span>
+  </div>
+</header>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
